@@ -8,6 +8,9 @@ This is the status-page template "Stars" for UptimeMatrix, the uptime monitoring
 
 Feel free to use this site as a template or to suggest improvements. 
 
+![image](https://github.com/user-attachments/assets/c2567f0c-f46b-49d5-8041-f97cef85dffb)
+
+
 > [!TIP]
 > Check out our other [open source](https://github.com/layeredy) projects!
 
