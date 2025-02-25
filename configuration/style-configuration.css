@@ -1,0 +1,23 @@
+/* These CSS variables can be used to do basic styling without creating custom modifications in static/css/custom.js or editing static/css/uptimematrix.css */
+:root {
+  --bg-color: #1a2847; 
+  --text-color: #f0f5ff; 
+  --accent-color: #8b5cf6; 
+  --alert-color: #f87171; 
+  --success-color: #34d399;
+  --warning-color: #fbbf24; 
+  --slow-color: #ffb74d; 
+  --maintenance-color: #06b6d4;  
+  --dropdown-bg: #2d3e5f; 
+  --card-bg: #2d3e5f; 
+  --border-radius: 10px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --spacing-xs: 6px;
+  --spacing-sm: 12px;
+  --spacing-md: 20px;
+  --spacing-lg: 28px;
+  --overall-status-bg: #2d3e5f; 
+  --overall-status-text: #ffffff;
+  --separator-color: rgba(255, 255, 255, 0.15);
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
