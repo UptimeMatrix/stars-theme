@@ -147,7 +147,7 @@ h1 a {
 }
 
 .update {
-  border-left-color: var(--success-color);
+  border-left-color: var(--status-update-color);
 }
 
 .alert h3,
