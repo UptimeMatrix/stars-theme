@@ -1,6 +1,6 @@
 [![layeredy](https://cdn.layeredy.com/uptimematrix/wordmark.png)](https://uptimematrix.com)
 
-# Stars by UptimeMatrix
+# lyrdy/uptime - stars theme
 This is the status-page template "Stars" for UptimeMatrix, the uptime monitoring software developed by [Layeredy](https://layeredy.com)
 
 > [!NOTE]
