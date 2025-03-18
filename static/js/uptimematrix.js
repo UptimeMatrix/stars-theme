@@ -132,18 +132,108 @@ function handleWhitelabel(isWhitelabel) {
 
 function displayErrorMessage() {
     const body = document.body;
-    body.innerHTML = `
-        <div style="text-align: center; padding: 20px;">
-            <h1>Uh oh...</h1>
-            <p>Something went really wrong while loading this status page </p>
-            <p style="font-size: 0.8em;">Check if UptimeMatrix is having issues on our status page</p>
-            <p style="font-size: 0.6em;">This error has been reported to UptimeMatrix and we are looking into it.</p>
-            <br /> 
-            <button onclick="window.location.href='https://status.uptimematrix.com'" style="padding: 10px 20px; background-color: #0275d8; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
-                UptimeMatrix status
-            </button>
-        </div>
-    `;
+    const container = document.querySelector('.container');
+    
+    if (container) {
+        container.innerHTML = `
+            <div class="error-container">
+            <div class="error-card">
+                <div class="error-icon">
+                <i class="bi bi-exclamation-circle-fill"></i>
+                </div>
+                <h2 class="error-title">Invalid data file</h2>
+                <p class="error-message">
+                The status data could not be found or loaded. Check your browser console for errors
+                </p>
+                <div class="error-instruction-box">
+                <p><strong>Solution:</strong> Make sure your configuration/configuration.js and data file are correct.</p>
+                <p><strong>Note:</strong> You can create a data file in a GUI using the <a href="https://github.com/uptimematrix/dashboard" style="text-decoration: underline; color: inherit;">dashboard</a></p>
+
+                </div>
+            </div>
+            </div>
+        `;
+        
+        const styleElement = document.createElement('style');
+        styleElement.textContent = `
+            .error-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: var(--spacing-lg);
+                min-height: 40vh;
+            }
+            
+            .error-card {
+                background-color: var(--card-bg);
+                border-radius: var(--border-radius);
+                padding: var(--spacing-lg);
+                max-width: 600px;
+                width: 100%;
+                box-shadow: var(--box-shadow);
+            }
+            
+            .error-icon {
+                color: var(--alert-color);
+                margin-bottom: var(--spacing-sm);
+                font-size: 2.5rem;
+            }
+            
+            .error-title {
+                margin-top: 0;
+                margin-bottom: var(--spacing-sm);
+                color: var(--alert-color);
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+            
+            .error-message {
+                margin-bottom: var(--spacing-md);
+                color: var(--text-color);
+                line-height: 1.5;
+            }
+            
+            .error-instruction-box {
+                background-color: rgba(239, 68, 68, 0.15);
+                border-radius: var(--border-radius);
+                padding: var(--spacing-md);
+                margin-bottom: var(--spacing-md);
+                border: 1px solid rgba(239, 68, 68, 0.2);
+            }
+            
+            body.light-mode .error-instruction-box {
+                background-color: rgba(239, 68, 68, 0.08);
+                border: 1px solid rgba(239, 68, 68, 0.15);
+            }
+            
+            .error-link {
+                color: var(--text-color);
+                margin-top: var(--spacing-sm);
+            }
+            
+            .error-link a {
+                color: var(--accent-color);
+                text-decoration: none;
+                font-weight: 600;
+                transition: var(--transition);
+            }
+            
+            .error-link a:hover {
+                text-decoration: underline;
+            }
+        `;
+        document.head.appendChild(styleElement);
+    } else {
+        body.innerHTML = `
+            <div style="text-align: center; padding: 20px; color: #e2e8f0; background-color: #0f172a;">
+                <h1 style="color: #ef4444;">Invalid data file</h1>
+                <p>The status data could not be found or loaded.</p>
+                <div style="background-color: rgba(239, 68, 68, 0.15); padding: 15px; border-radius: 8px; margin: 20px 0; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <p><strong>Make sure your configuration/configuration.js and data file are correct. Check your browser console for errors</strong></p>
+                </div>
+            </div>
+        `;
+    }
 }
 
 function updateAnnouncementBar(announcement) {
